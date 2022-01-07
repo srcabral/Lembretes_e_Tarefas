@@ -7,4 +7,6 @@
     <string name="date">Data</string>
     <string name="criar_tarefa">Criar Tarefa</string>
     <string name="lb_nova_tarefa">Nova Tarefa</string>
+    <string name="lb_editar">Editar</string>
+    <string name="lb_deletar">Deletar</string>
 </resources>
