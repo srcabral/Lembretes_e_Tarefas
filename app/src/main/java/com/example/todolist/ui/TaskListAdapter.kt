@@ -10,14 +10,14 @@ import com.example.todolist.R
 import com.example.todolist.databinding.ItemTaskBinding
 import com.example.todolist.model.Task
 
-class TaskListAdapter: ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCallback()) {
+class TaskListAdapter : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCallback()) {
 
-    var listenerEdit : (Task) -> Unit = {}
-    var listenerDelete : (Task) -> Unit = {}
+    var listenerEdit: (Task) -> Unit = {}
+    var listenerDelete: (Task) -> Unit = {}
 
     inner class TaskViewHolder(
         private val binding: ItemTaskBinding
-        ): RecyclerView.ViewHolder(binding.root){
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Task) {
             binding.tvTitle.text = item.title
             binding.tvDescription.text = item.description
@@ -54,7 +54,7 @@ class TaskListAdapter: ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCal
     }
 }
 
-class DiffCallback(): DiffUtil.ItemCallback<Task>(){
+class DiffCallback() : DiffUtil.ItemCallback<Task>() {
     override fun areItemsTheSame(oldItem: Task, newItem: Task) = oldItem == newItem
     override fun areContentsTheSame(oldItem: Task, newItem: Task) = oldItem.id == newItem.id
 }
